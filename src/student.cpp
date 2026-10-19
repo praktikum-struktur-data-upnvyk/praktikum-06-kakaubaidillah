@@ -76,9 +76,11 @@ bool enqueue(Queue& q, int nomor) {
     if(isEmpty(q)){
           q.depan = newNode;
           q.belakang = newNode;
+          return true;
     }else{
           q.belakang->next = newNode;
           q.belakang = newNode;
+          return true;
     }
     return false;
 }
@@ -101,7 +103,7 @@ bool dequeue(Queue& q, int& nomor) {
     }
 
     delete del;
-    return false;
+    return true;
 }
 
 // =============================================================================
